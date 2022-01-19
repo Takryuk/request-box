@@ -33,11 +33,6 @@ const Navbar = (props) => {
     const dispatch = useDispatch()
     const currentUser = useSelector(state=>state.userInfo)
 
-
-    const handleAccountMenu = (event)=>{
-        setAnchorMenu(event.currentTarget);
-    };
-
     const handleClose = (event) => {
 
 
@@ -47,10 +42,6 @@ const Navbar = (props) => {
     const handleLogout =()=>{
         dispatch(logout(history, props.cookies))
     }
-
-    // const handleSignup = () =>{
-    //     history.push('/signup')
-    // }
 
     return (
         <Fragment>
@@ -82,13 +73,11 @@ const Navbar = (props) => {
                 <div 
                     style={{
                         marginRight:30,
-                        // margin:"0 0 0 auto"
                     }} 
                     
                 >
                     {isAuthenticated?(
                         <Fragment>
-                            {/* <Button onClick={handleAccountMenu} color="inherit">アカウント</Button> */}
                             <Button 
                                 component={RouterLink} 
                                 to={`/request-list`}
@@ -126,7 +115,6 @@ const Navbar = (props) => {
                             </Button>
                             <Button 
                                 onClick={handleLogout} 
-                                // color="inherit"
                                 style={{
                                     fontFamily:fontFamily.body,
                                     color:"#ffffff",
@@ -165,36 +153,7 @@ const Navbar = (props) => {
                     )}
                 </div>
             </div>
-            {/* <AppBar position="static" className={classes.root}>
-                <Toolbar>
-                    <Button 
-                        className={classes.title} 
-                        component={RouterLink} to="/"
-                        color="inherit"
-                        style={{
-                            fontFamily:"Arial Rounded MT Bold",
-                            fontSize:24,
 
-                        }}
-                    >
-                        Request Box
-                    </Button>
-
-                    <div style={{margin:"0 0 0 auto"}} >
-                        {isAuthenticated?(
-                            <Fragment>
-                                <Button component={RouterLink} to='/myaccount' color="inherit">アカウント</Button>
-                                <Button onClick={handleLogout} color="inherit">ログアウト</Button>
-                            </Fragment>
-                        ):(
-                            <Fragment>
-                                <Button component={RouterLink} to='/signup' color="inherit">登録</Button>
-                                <Button component={RouterLink} to='/login' color="inherit">ログイン</Button>
-                            </Fragment>
-                        )}
-                    </div>
-                </Toolbar>
-            </AppBar> */}
 
             <Menu
                 id="simple-menu"
@@ -206,14 +165,9 @@ const Navbar = (props) => {
                 anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
                 transformOrigin={{ vertical: "top", horizontal: "center" }}
             >
-                {/* <MenuItem onClick={handleClose}>
-                    <Button component={RouterLink} to="/myaccount">マイアカウント</Button>
-                </MenuItem> */}
                 <MenuItem component={RouterLink} to="/myaccount" onClick={handleClose}>アカウント
-                    {/* <Button component={RouterLink} to="/myaccount">マイアカウント</Button> */}
                 </MenuItem>
                 <MenuItem component={RouterLink} to="/selling-list" onClick={handleClose}>出品中の商品
-                    {/* <Button component={RouterLink} to="/myaccount">マイアカウント</Button> */}
                 </MenuItem>
 
             </Menu>

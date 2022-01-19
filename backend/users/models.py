@@ -68,26 +68,17 @@ def image_upload_path(instance, filename):
 
 
 class Profile(models.Model):
-    # id = models.UUIDField(
-    #     default=uuid.uuid4,
-    #     primary_key=True,
-    #     editable=False
-    # )
 
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,         
         on_delete=models.CASCADE)
     username = models.CharField(max_length=50, null=True, blank=True)
     image = models.ImageField(
-        # processors=[ResizeToFill(1280, 1280)],
-        # format='JPEG',
-        # options={'quality': 50},
         blank=True,
         validators=[validate_image],
         upload_to=image_upload_path,
     )
     
-    # profile = models.CharField(default='', max_length=1000, blank=True)
     profile = models.TextField(default='', max_length=1000, blank=True)
     is_official = models.BooleanField(default=False)
 

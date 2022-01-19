@@ -126,10 +126,8 @@ function MyAccount(props) {
             body,
             config,
         )
-        // .then(res=>{
-        // })
+
         .catch(err=>{
-            // console.log('err')
         })
     }
 
@@ -424,24 +422,18 @@ function MyAccount(props) {
                 <input
                     type="file"
                     hidden
-                    // value={profileImage} 
                     onChange={handleImageChange}
-                    // onChange={(e)=>setProfileImage(URL.createObjectURL(e.target.files[0]))}
                 />
                 </Button>
                 <Button
                     variant="contained"
                     type="submit"
-                    // display="inline-block"
-                    // style={{display:"inline-block", margin:"auto"}}
-                    // style={{marginBottom:30}}
                 >
                     Change
                 </Button>
             </form>
 
           
-          {/* <MyAccount /> */}
         </div>
       );
 
@@ -450,7 +442,6 @@ function MyAccount(props) {
             <form onSubmit={handleProfileSubmit} style={{width:"100%", marginBottom:30}}>
             <Typography variant="h6" style={{marginBottom:30}} >Change profile texts</Typography>
 
-                {/* <InputLabel htmlFor="my-input">Email address</InputLabel> */}
                 <div style={{marginBottom:20}}>
                     <Typography>
                         New profile texts
@@ -481,8 +472,6 @@ function MyAccount(props) {
           switch (clicked) {
             case 'username':
                 return usernameBody;
-            // case 'email':
-            //     return emailBody;
             case 'password':
                 return passwordBody;
             case 'image':
@@ -612,7 +601,6 @@ function MyAccount(props) {
 
                         <Typography>
                             
-                        {/* {userInfo?createMultiline(userInfo.user_profile.profile):null} */}
                         </Typography>
                         
                     </ListItem>                

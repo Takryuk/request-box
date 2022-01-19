@@ -131,13 +131,8 @@ const Home = () => {
             >
             <div
                 style={{
-                    // display:"inline-block",
-                    // backgroundColor:"#fe8d00",
-                    // padding:10, 
                     fontSize:24,
-                    // borderRadius:5,
                     marginBottom:20,
-                    // color:"#ffffff",
                 }}
             >
                     How to receive requests
@@ -162,13 +157,8 @@ const Home = () => {
             >
                 <div
                     style={{
-                        // display:"inline-block",
-                        // backgroundColor:"#fe8d00",
-                        // padding:10, 
                         fontSize:24,
-                        // borderRadius:5,
                         marginBottom:20,
-                        // color:"#ffffff",
                     }}
                 >
                         How to post requests

@@ -42,7 +42,6 @@ const RequestBox = (props) => {
         ).then(res=>{
             setUser(res.data)
         }).catch(err=>{
-            // console.log(err)
         })
 
     }
@@ -121,12 +120,7 @@ const RequestBox = (props) => {
                     color:"rgba(0, 0, 0, 0.75)",
                 }}
             >
-                {/* <CheckIcon 
-                    style={{
-                        cursor:"pointer",
-                    }}
-                    onClick={copyUrl}
-                /> */}
+
                 <br/>
                 <input  
                     type="hidden"
@@ -135,7 +129,6 @@ const RequestBox = (props) => {
                     style={{
                         display:"inline-block",
                         width:458,
-                        // maxWidth:"75%",
                         border:"none",
                         outline: "none",
                     }}
@@ -145,13 +138,8 @@ const RequestBox = (props) => {
                     type="submit"
                     variant="outlined"
                     style={{
-                        // fontFamily:fontFamily.body,
-                        // color:fontColor.body, 
                         fontSize:11,
                         padding:5,
-                        // border:"none",
-                        // backgroundColor:"#f27201",
-                        // color:"#ffffff",
                         display:"inline-block",
                     }}
                 >
@@ -162,7 +150,6 @@ const RequestBox = (props) => {
             </div>
             <Grid 
                 container 
-                // spacing={2}
                 style={{
                     marginBottom:50,
                 }}
@@ -175,7 +162,6 @@ const RequestBox = (props) => {
                     }}
                 >
                     <DisplayImage
-                        // src="http://127.0.0.1:8000/media/user_image/2021/05/30/animation2.jpg"
                         src={user.image}
                         style={{
                             borderRadius:"50%",
@@ -188,7 +174,6 @@ const RequestBox = (props) => {
                         item
                         style={{
                             fontSize:30,
-                            // color:fontColor.body,
                         }}
                     >
                         {user.username}
@@ -204,7 +189,6 @@ const RequestBox = (props) => {
                 <div
                     style={{
                         marginBottom:20,
-                        // color:fontColor.body,
                         fontSize:20,
                     }}
                 >
@@ -244,8 +228,6 @@ const RequestBox = (props) => {
                     fullWidth
                     type="submit"
                     style={{
-                        // fontFamily:fontFamily.body,
-                        // color:fontColor.body,
                         marginBottom:30, 
                         fontSize:18,
                         border:"none",

@@ -7,36 +7,14 @@ import axios from 'axios';
 import {fontFamily, fontColor} from '../css/css';
 import {withCookies} from 'react-cookie';
 
-// const useStyles = makeStyles({
-//     root: {
-//       maxWidth: 140,
-//     },
-//     media: {
-//       height: 140,
-//     },
-// });
-
-
 
 const Home = (props) => {
     const [merchandises, setMerchandises] = useState([])
     const [nextPageNumber, setNextPageNumber] = useState(1)
-    // const classes = useStyles();
-
-    const [value, setValue] = React.useState(0);
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
 
     useEffect(() => {
         fetchMerchandises(1)
-    }, [])
-
- 
-    const dispatch = useDispatch();
-    const currentUser = useSelector(state=>state.userInfo)
-    
+    }, [])    
 
 
     const fetchMerchandises = async(nextPageNumber) => {
@@ -51,7 +29,6 @@ const Home = (props) => {
             config,
         )
         .then(res=>{
-            // setMerchandises(res.data.results)
             setMerchandises([...merchandises, ...res.data.results])
             setNextPageNumber(nextPageNumber+1)
 
@@ -65,14 +42,6 @@ const Home = (props) => {
         fetchMerchandises(nextPageNumber)
     }
 
-
-
-    // if(!currentUser){
-    //     return <div></div>
-    // }
-
-
-
     return (
         <div
             style={{
@@ -80,7 +49,6 @@ const Home = (props) => {
                 maxWidth:600,
             }}
         >
-        {/* <Grid container> */}
             <div
             >
                 <Typography

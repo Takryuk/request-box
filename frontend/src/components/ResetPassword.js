@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-// import { resetPassword } from '../actions/userActions';
 import {fontFamily, font, fontColor} from '../css/css.js';
 import Button from '@material-ui/core/Button';
 import {withCookies} from 'react-cookie';
-import { useDispatch} from 'react-redux';
 import Alert from '@material-ui/lab/Alert';
 import axios from 'axios';
 
@@ -34,14 +32,8 @@ const ResetPassword = (props) => {
         try {
             await axios.post(`${process.env.REACT_APP_API_URL}/auth/users/reset_password/`, body, config);
     
-            // dispatch({
-            //     type: PASSWORD_RESET_SUCCESS
-            // });
             setPasswordResetSuccess(true)
         } catch (err) {
-            // dispatch({
-            //     type: PASSWORD_RESET_FAIL
-            // });
         }
     };
 
@@ -67,8 +59,7 @@ const ResetPassword = (props) => {
                     style={{
                         maxWidth:600,
                         margin:"0 auto",
-                        // display:"flex",
-                        // justifyContent:"center",
+
                     }}
                 >
                     <input
@@ -82,7 +73,6 @@ const ResetPassword = (props) => {
                             padding:6,
                             width:"100%",
                             display:"block",
-                            // border:"1px solid",
                             borderRadius: 4,
                             border: "none",
                             boxShadow: "0 0 0 1px #ccc inset",
@@ -95,8 +85,7 @@ const ResetPassword = (props) => {
                             fontSize:15,
                             "-webkit-box-sizing": "border-box",
                             boxSizing: "border-box",
-                            // marginRight: "auto",
-                            // marginLeft: "auto",
+
 
     
                         }}
@@ -112,7 +101,6 @@ const ResetPassword = (props) => {
                             border:"none",
                             backgroundColor:"#11b717",
                             color:"#ffffff",
-                            // margin: "0 auto",
 
                         }}
 

@@ -8,7 +8,6 @@ import {
 import Alert from '@material-ui/lab/Alert';
 import axios from 'axios';
 
-// import {withCookies} from 'react-cookie';
 
 const Signup = () => {
 
@@ -17,9 +16,7 @@ const Signup = () => {
     const [password, setPassword] = useState('')
     const [rePassword, setRePassword] = useState('');
     const [showAlert, setShowAlert] = useState(false)
-    // const [validatePassword, setValidatePassword] = useState(true)
     const [validateRePassword, setValidateRePassword] = useState(true)
-    // const [passwordHelperTexts, setPasswordHelperTexts] = useState([])
     const [passwordTooShort, setPasswordTooShort] = useState(false)
     const [emailAlreadyExists, setEmailAlreadyExists] = useState(false);
     const [passwordTooCommon, setPasswordTooCommon] = useState(false);    
@@ -37,7 +34,6 @@ const Signup = () => {
 
     const continueWithTwitter = async () => {
         try {
-            // const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/login/twitter/?redirect_uri=${process.env.REACT_APP_API_URL}/oauth/complete/twitter`)
             const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/o/twitter/?redirect_uri=${process.env.REACT_APP_API_URL}/oauth/complete/twitter`)
 
             window.location.replace(res.data.authorization_url);
@@ -67,7 +63,6 @@ const Signup = () => {
             .then(res =>{
                 if(200 <= res.status && res.status <= 299){
                     setSignupSuccess(true)
-                    // setIsAuthenticated(true)
                 }
             })
             .catch(err=>{
@@ -98,10 +93,7 @@ const Signup = () => {
     const handleSubmit = (event) =>{
         event.preventDefault()
         signup(username, email, password, rePassword)
-        // if(signupSuccess){
-        //     setShowAlert(true)
-        // }
-        // setShowAlert(true)
+
         
     }
 
@@ -109,9 +101,6 @@ const Signup = () => {
         setPassword(event.target.value)
         if(event.target.value.length < 8){
             setPasswordTooShort(true)
-            // setPasswordHelperTexts([...passwordHelperTexts, "8文字以上"])
-            // passwordHelperTexts.push("8文字以上")
-
         }else{
             setPasswordTooShort(false)
         }
@@ -133,7 +122,6 @@ const Signup = () => {
         let helperTexts = []
         
         if(passwordTooCommon){
-            // passwordHelperTexts.push("パスワードが簡単すぎます")
 
             helperTexts.push("Password is too short!")
         }
@@ -154,9 +142,7 @@ const Signup = () => {
                     )
                 })
         )
-        // if(emailAlreadyExists){
-        //     // renderTexts.push("そのメールアドレスはすでに登録されています。")
-        // }
+
     }
 
     const handleAlertClose = (event, reason)=>{
@@ -211,18 +197,8 @@ const Signup = () => {
                 </div>               
 
 
-            {/* <button onClick={continueWithTwitter}>
-                Twitterでログイン
-            </button> */}
-
-
-
-            {/* {showAlert? <Alert severity="success">メールを送信しました。確認してアカウントを有効化してください。</Alert>:''} */}
-            
-            
             <form onSubmit={(e) =>handleSubmit(e)} style={{width:"100%", marginBottom:30}}>
 
-                {/* <InputLabel htmlFor="my-input">Email address</InputLabel> */}
                 <div style={{marginBottom:20}}>
                     <div>
                         Username(you can change it later)

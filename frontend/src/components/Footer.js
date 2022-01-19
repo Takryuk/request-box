@@ -4,8 +4,6 @@ const Footer = () => {
     return (
         <div
             style={{
-                // backgroundColor:"rgba(254, 198, 120, 0.39)",
-                // display:"inline-block",
                 textAlign:"center",
                 height:40,
                 

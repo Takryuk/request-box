@@ -13,7 +13,6 @@ import axios from 'axios';
 import {withCookies} from 'react-cookie';
 
 
-// import {login} from '../actions/userActions';
 const Login = (props) => {
     const dispatch = useDispatch();
 
@@ -31,9 +30,7 @@ const Login = (props) => {
 
     const continueWithTwitter = async () => {
         try {
-            // const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/login/twitter/?redirect_uri=${process.env.REACT_APP_API_URL}/oauth/complete/twitter`)
             const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/o/twitter/?redirect_uri=${process.env.REACT_APP_API_URL}/oauth/complete/twitter`)
-            // const res = await axios.get(`${process.env.REACT_APP_API_URL}/oauth/login/twitter/?redirect_uri=${process.env.REACT_APP_API_URL}/oauth/complete/twitter`)
 
             window.location.replace(res.data.authorization_url);
         } catch (err) {
@@ -73,14 +70,11 @@ const Login = (props) => {
         .catch(err=>{
             dispatch({
                 type: USER_LOGIN_FAIL,
-                // payload: error.response && error.response.data.detail
-                //     ? error.response.data.detail
-                //     : error.message,
+
             })
             setAuthenticationFailed(true)
     
         })
-        // localStorage.setItem('userInfo', JSON.stringify(data))
     
     }
 

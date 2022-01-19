@@ -10,15 +10,11 @@ const FoldText = (props) => {
 
 
     const useStyles = makeStyles((theme) => ({
-        // "imgWrapper:before":{
-        //     // width:"75%",
-        // },
         sentence:{
             wordWrap:"break-word",
             textOverflow:"ellipsis",
             display:"-webkit-box", 
             overflow: 'hidden',
-            // WebkitLineClamp:"1",
             WebkitBoxOrient:"vertical",
         }
     }));

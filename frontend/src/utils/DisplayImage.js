@@ -9,12 +9,8 @@ const DisplayImage = ({src, aspectRatio, id, width, maxWidth, style}) => {
             }}
         >
         <img
-            // onLoad={handleImageLoad}
-            // id="output"
             id={id}
             src={src?src:null}
-
-            // ref={imageRef}
             style={{
                 ...style,
                 display:"block",

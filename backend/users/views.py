@@ -28,12 +28,10 @@ def username_change(request):
         if(request.data):
             username = request.data.get('username')
 
-        # serializer = ProfileSerializer(request.user, data={'username':username}, partial=True)
         serializer = ProfileSerializer(request.user.profile, data={'username':username}, partial=True)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
 
-            # self.perform_update(serializer)
             return Response(serializer.data)  
         return Response(serializer.errors)  
 
@@ -73,23 +71,3 @@ class PublicProfileView(generics.RetrieveAPIView):
 
 
 
-# def get_twitter_access_token(request):
-
-#     oauth_token = request.kwargs.get('oauth_token')
-#     oauth_verifier = request.kwargs.get('oauth_verifier')
-
-#     twitter = OAuth1Session(
-#         consumer_key,
-#         consumer_secret,
-#         oauth_token,
-#         oauth_verifier,
-#     )
-
-#     response = twitter.post(
-#         access_token_url,
-#         params={'oauth_verifier': oauth_verifier}
-#     )
-
-#     access_token = dict(parse_qsl(response.content.decode("utf-8")))
-
-#     return jsonify(access_token)

@@ -14,29 +14,6 @@ const Layout = ({children, location, cookies}) => {
 
     const dispatch = useDispatch()
 
-    // const {
-    //     checkAuthenticated,
-    // } = useContext(ApiContext)
-
-    // useEffect(() => {
-    //     checkAuthenticated();
-    //     isAuthenticated
-    //     // load_user();
-    // }, [isAuthenticated]);
-
-    // const {
-    //     checkAuthenticated,
-    //     // isAuthenticated,
-    //     loadUser,
-    //  } = useContext(ApiContext)
-
-    //  useEffect(() => {
-    //     // setIsLoading(true)
-    //     checkAuthenticated();
-
-    //     // load_user();
-    // }, []);
-
     useEffect(()=>{
         dispatch(loadUser(cookies))
     },[])
