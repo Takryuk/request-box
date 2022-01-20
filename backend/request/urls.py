@@ -37,8 +37,8 @@ urlpatterns = [
     path('oauth/', include('social_django.urls', namespace='social')),
 
     path('accounts/profile/', views.index, name='index'),
-    path('users/', include('users.urls')),
-    path('messages/', include('request_messages.urls')),
+    path('users/', include('users.urls', namespace="users")),
+    path('messages/', include('request_messages.urls', namespace='messages')),
 
 ]
 

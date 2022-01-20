@@ -17,6 +17,8 @@ from .views import(
     # has_purchased,
 )
 
+app_name="users"
+
 urlpatterns = [
     path('username/', username_change, name='username-change'),
     path('profile/', profile_change, name='profile-change'),

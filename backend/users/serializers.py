@@ -49,10 +49,6 @@ class UserProfileSerializer(UserSerializer):
 
 
 
-
-
-
-
 class PublicProfileSerializer(UserSerializer):
     class Meta(UserSerializer.Meta):
         model = Profile

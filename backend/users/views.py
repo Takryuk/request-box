@@ -25,43 +25,43 @@ from common.permissions import ReadOnly
 @api_view(['PATCH'])
 @permission_classes([IsAuthenticated])
 def username_change(request):
-        if(request.data):
-            username = request.data.get('username')
+    if(request.data):
+        username = request.data.get('username')
 
-        serializer = ProfileSerializer(request.user.profile, data={'username':username}, partial=True)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
+    serializer = ProfileSerializer(request.user.profile, data={'username':username}, partial=True)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
 
-            return Response(serializer.data)  
-        return Response(serializer.errors)  
+        return Response(serializer.data)  
+    return Response(serializer.errors)  
 
 
 @api_view(['PATCH'])
 @permission_classes([IsAuthenticated])
 def profile_change(request):
-        profile=request.user.profile.profile
-        if(request.data):
-            profile = request.data.get('profile')
+    profile=request.user.profile.profile
+    if(request.data):
+        profile = request.data.get('profile')
 
-        serializer = ProfileSerializer(request.user.profile, data={'profile':profile}, partial=True)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)  
-        return Response(serializer.errors)  
+    serializer = ProfileSerializer(request.user.profile, data={'profile':profile}, partial=True)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+        return Response(serializer.data)  
+    return Response(serializer.errors)  
 
 
 @api_view(['PATCH'])
 @permission_classes([IsAuthenticated])
 def image_change(request):
-        image=request.user.profile.image
-        if(request.data):
-            image = request.data.get('image')
+    image=request.user.profile.image
+    if(request.data):
+        image = request.data.get('image')
 
-        serializer = ProfileSerializer(request.user.profile, data={'image':image}, partial=True)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)  
-        return Response(serializer.errors)  
+    serializer = ProfileSerializer(request.user.profile, data={'image':image}, partial=True)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+        return Response(serializer.data)  
+    return Response(serializer.errors)  
 
 
 class PublicProfileView(generics.RetrieveAPIView):

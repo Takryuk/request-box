@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+django = "==3.2"
 djoser = "*"
 djangorestframework-simplejwt = "*"
 djangorestframework = "*"
@@ -19,6 +19,7 @@ python-dotenv = "*"
 django-sendgrid-v5 = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+django-cleanup = "*"
 
 [requires]
 python_version = "3.7"
